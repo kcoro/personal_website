@@ -1,10 +1,29 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.menu-btn i.bi-chevron-double-right {
+  font-size: 3rem;
+}
+.menu-btn i.bi-chevron-double-right:hover {
+  color: #eece1a;
+  transition: all 0.5s ease-out;
+}
+.menu-btn.close {
+  transform: rotate(90deg);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   background: #444;
-  color: white;
+  color: #fff;
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -64,7 +83,7 @@ main#home h1 {
 }
 main .icons {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 main .icons a {
   padding: 0.4rem;

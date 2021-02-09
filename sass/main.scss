@@ -1,4 +1,5 @@
 @import 'config'; // stores user defined variables and mixin's
+@import 'menu';
 
 // border-box - padding won't affect height of elem's,
 // will respect the dimensions of the box model
@@ -9,7 +10,7 @@
 body {
     @include background; // mixin provides background img and properties
     background: $primary-color;
-    color: white;
+    color: #fff;
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -63,7 +64,7 @@ main {
     // Social Icons
     .icons {
         margin-top: 1rem; // push icons down
-        font-size: 2rem;
+        font-size: 3rem;
 
         a {
             padding: 0.4rem; // spacing between icons

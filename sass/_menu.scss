@@ -1,0 +1,24 @@
+// Menu button
+.menu-btn {
+    position: absolute; // specify exactly where btn is
+    z-index: 3; // make sure menu btn is always on top
+    right: 35px;
+    top: 35px;
+    cursor: pointer;  // on hover turn arrow into hand to signify a clickable link
+    @include easeOut;
+
+    // Doube Chevron Button >>
+    i.bi-chevron-double-right {
+        font-size: 3rem;
+        &:hover {
+            color: $secondary-color;
+            @include easeOut;
+        }
+    }
+
+    // Rotate Menu Button
+    // Style when class is closed
+    &.close {
+        transform: rotate(90deg);
+    }
+}

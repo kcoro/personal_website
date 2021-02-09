@@ -1,6 +1,77 @@
-$primary-color: #444;
+@import 'config'; // stores user defined variables and mixin's
+
+// border-box - padding won't affect height of elem's,
+// will respect the dimensions of the box model
+* {
+    box-sizing: border-box;
+}
 
 body {
+    @include background; // mixin provides background img and properties
     background: $primary-color;
     color: white;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+// Headings
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 400;
+
+    // & targets class that belong to containing elements, ie h1, h2, h3
+    &.lg-heading {
+        font-size: 6rem;
+    }
+
+    // & targets class that belong to containing elements, ie h1, h2, h3
+    &.sm-heading {
+        margin-bottom: 2rem; // margin on bottom pushes icons below it down
+        padding: 0.2rem 1rem; // 0.2 top / bottom, 1 left / right
+        background: rgba(lighten($primary-color, 2), 0.5);
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+// menu button top
+header {
+    position: fixed;  // menu btn stays fixed at top on scroll
+    z-index: 2;  // make sure menu is always on top
+    width: 100%;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main {
+    padding: 4rem; // padding around all elems inside main
+    height: 100%;
+
+    &#home {
+        overflow: hidden; // no scroll bars
+        h1 {
+            margin-top: 20vh; // push heading down from top of page
+        }
+    }
+
+    // Social Icons
+    .icons {
+        margin-top: 1rem; // push icons down
+        font-size: 2rem;
+
+        a {
+            padding: 0.4rem; // spacing between icons
+            &:hover {
+                color: $secondary-color;
+                @include easeOut;
+            }
+        }
+    }
+}
+

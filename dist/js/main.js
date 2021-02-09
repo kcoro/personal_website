@@ -14,8 +14,8 @@ menuBtn.addEventListener('click', toggleMenu);
 function toggleMenu() {
     if (!showMenu) {
         // If menu is Not shown
-        // we want to add show classeses to everythin
-        // and then set menuBtn class to close
+        // we want to add show class to everything
+        // set menuBtn class to close
         menuBtn.classList.add('close');
         menu.classList.add('show');
         menuNav.classList.add('show');
@@ -26,8 +26,8 @@ function toggleMenu() {
         showMenu = true;
     } else {
         // If menu is shown
-        // we want to removeshow classeses to everythin
-        // and then set menuBtn class to show
+        // we want to remove show class
+        // menuBtn remove class close
         menuBtn.classList.remove('close');
         menu.classList.remove('show');
         menuNav.classList.remove('show');

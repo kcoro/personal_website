@@ -22,3 +22,100 @@
         transform: rotate(90deg);
     }
 }
+
+// Menu Overlay
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden; // default vis, without show class, don't want this to be seen
+
+    // When show class is toggled
+    &.show {
+        visibility: visible;
+    }
+
+    .menu-photo, .menu-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%; // each side use 50% of width
+        height: 100vh;
+        overflow: hidden; // never want scroll bars
+    }
+
+    // Transform right side of menu-nav to slide down from top
+    .menu-nav {
+        margin: 0;
+        padding: 0;
+        background: darken($primary-color, 5);
+        list-style: none; // get rid of bullet points on list items
+        transform: translate3d(0, -100%, 0); // push menu-nav below viewport
+        @include easeOut;
+
+        // When show class applied to menu-nav
+        &.show {
+            // Slide in from top
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    // Want left sife of menu sliding up from bottom
+    .menu-photo {
+        background: $primary-color;
+        transform: translate3d(0, 100%, 0);  // Push menu-photo below viewport
+        @include easeOut;
+
+        // When show class applied to .menu-photo
+        &.show {
+            // Slide in from bottom
+            transform: translate3d(0, 0, 0);
+        }
+
+        .photo {
+            width: 250px;
+            height: 250px;
+            background: url('../img/portrait.jpg');
+            border-radius: 50%;
+            border: solid 3px $secondary-color;
+        }
+    }
+
+    .nav-item {
+        display: inline-block;
+        position: relative;
+        font-size: 2rem;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
+        transform: translate3d(600px, 0, 0);
+        @include easeOut;
+
+        // When show class applied
+        &.show {
+            transform: translate3d(0, 0 ,0);
+        }
+
+        // When current class is applied to a nav item
+        &.current > a {
+            color: $secondary-color;
+        }
+
+        &:hover > a {
+            color: $secondary-color;
+        }
+    }
+
+}
+
+// Delay each nav item slide by 0.1s
+@for $i from 1 through 4 {
+    .nav-item:nth-child(#{$i}) {
+        transition-delay: $i * 0.1s;
+    }
+}

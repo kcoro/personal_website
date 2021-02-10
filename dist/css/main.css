@@ -217,6 +217,45 @@ main .icons a:hover {
   font-weight: 500;
 }
 
+.projects {
+  display: grid;
+  grid-gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.projects img {
+  width: 100%;
+  border: rgba(238, 206, 26, 0) 5px solid;
+}
+.projects i {
+  margin-right: 1rem;
+}
+.projects .btn-proj {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 1rem;
+  border: 0;
+  background: #373737;
+}
+.projects .item:hover img {
+  opacity: 0.5;
+  border: #eece1a 5px solid;
+  transition: all 0.5s ease-out;
+}
+.projects .item:hover .btn-proj {
+  background: #eece1a;
+  color: #fff;
+}
+
+@media screen and (min-width: 1281px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
@@ -256,10 +295,18 @@ main .icons a:hover {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr;
   }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh;
+  }
+
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

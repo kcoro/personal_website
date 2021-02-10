@@ -1,6 +1,5 @@
 @import 'config'; // stores user defined variables and mixin's
 @import 'menu';
-@import 'mobile';
 
 // border-box - padding won't affect height of elem's,
 // will respect the dimensions of the box model
@@ -11,7 +10,7 @@
 body {
     @include background; // mixin provides background img and properties
     background: $primary-color;
-    color: #fff;
+    color: $text-color;
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -77,3 +76,48 @@ main {
     }
 }
 
+// About Page Styling
+// Setup grid area for /about
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+    'bioimage bio bio'
+    'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+}
+
+.bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+}
+
+.job-1 {
+    grid-area: job1;
+}
+
+.job-2 {
+    grid-area: job2;
+}
+
+.job-3 {
+    grid-area: job3;
+}
+
+.job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+    h3 {
+        font-weight: 500;
+    }
+}
+
+@import 'mobile';

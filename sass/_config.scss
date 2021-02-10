@@ -1,5 +1,6 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
+$text-color: #fff;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.84;
@@ -50,13 +51,13 @@ $background-opacity: 0.84;
 
 @mixin mediaLg {
     // Will only apply if screen is <= 500px
-    @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @media screen and (min-width: 769px) and (max-width: 1180px) {
         @content;
     }
 }
 
 @mixin mediaXl {
-    @media screen and (min-width: 1171px) {
+    @media screen and (min-width: 1181px) {
         @content;
     }
 }

@@ -171,6 +171,7 @@ main .icons {
 }
 main .icons a {
   padding: 0.4rem;
+  transition: all 0.5s ease-out;
 }
 main .icons a:hover {
   color: #eece1a;
@@ -225,6 +226,7 @@ main .icons a:hover {
 .projects img {
   width: 100%;
   border: rgba(238, 206, 26, 0) 5px solid;
+  transition: all 0.5s ease-out;
 }
 .projects i {
   margin-right: 1rem;
@@ -235,6 +237,7 @@ main .icons a:hover {
   padding: 1rem 1rem;
   border: 0;
   background: #373737;
+  transition: all 0.5s ease-out;
 }
 .projects .item:hover img {
   opacity: 0.5;
@@ -244,6 +247,35 @@ main .icons a:hover {
 .projects .item:hover .btn-proj {
   background: #eece1a;
   color: #fff;
+  transition: all 0.5s ease-out;
+}
+
+.boxes {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "email" "github" "linkedin";
+}
+.boxes .email-contact {
+  grid-area: email;
+}
+.boxes .github-contact {
+  grid-area: github;
+}
+.boxes .linkedin-contact {
+  grid-area: linkedin;
+}
+.boxes div {
+  background: #373737;
+  padding: 1rem 1rem;
+  width: 100%;
+  font-size: 1.5rem;
+  border: rgba(68, 68, 68, 0) 5px solid;
+  transition: all 0.5s ease-out;
+}
+.boxes div:hover {
+  border: #eece1a 5px solid;
+  transition: all 0.5s ease-out;
 }
 
 @media screen and (min-width: 1281px) {

@@ -17,7 +17,11 @@ $background-opacity: 0.84;
         &#bg-img {
             background: $home-image;
             background-attachment: fixed;
-            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+            height: 100%;
+            width: 100%;
+            margin: 0;
             // Overlay provides dark gray screen over background img
             // div with class overlay is nested inside body with id of bg-img
             .overlay {

@@ -1,8 +1,8 @@
 .menu-btn {
   position: absolute;
   z-index: 3;
-  right: 35px;
-  top: 35px;
+  right: 40px;
+  top: 40px;
   cursor: pointer;
   transition: all 0.5s ease-out;
 }
@@ -115,7 +115,11 @@ body {
 body#bg-img {
   background: url(../img/background.jpg);
   background-attachment: fixed;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 body#bg-img .overlay {
   z-index: -1;
@@ -318,7 +322,7 @@ main .icons a:hover {
     transform: translate3d(100%, 0, 0);
   }
   .menu-photo .photo {
-    background: url(../img/portrait_small.jpg);
+    background: url("../img/portrait_small.jpg");
     width: 150px;
     height: 150px;
   }

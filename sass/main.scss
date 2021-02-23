@@ -51,8 +51,11 @@ header {
 }
 
 main {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
     padding: 4rem; // padding around all elems inside main
-    height: 100%;
 
     &#home {
         overflow: hidden; // no scroll bars
